@@ -20,3 +20,10 @@ ios/
 
 expo-env.d.ts
 # @end expo-cli
+
+*.env
+!.env.dist
+
+*.apk
+*.aab
+*.ipa

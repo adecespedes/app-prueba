@@ -6,31 +6,17 @@ import LastOperation from "./LastOperation";
 import Saldo from "./Saldo";
 
 const Consultas = ({ operaciones, cuentas }) => {
-  const [selectedTab, setSelectedTab] = useState(0);
-  const buttons = [
-    { title: "Saldo" },
-    { title: "Todas las cuentas" },
-    { title: "Ultimas operaciones" },
-  ];
+	const [selectedTab, setSelectedTab] = useState(0);
+	const buttons = [{ title: "Saldo" }, { title: "Todas las cuentas" }, { title: "Ultimas operaciones" }];
 
-  return (
-    <SafeAreaView className="flex-1 bg-white">
-      <TabsButtons
-        buttons={buttons}
-        selectedTab={selectedTab}
-        setSelectedTab={setSelectedTab}
-      />
-      <View style={{ flex: 1, marginTop: 5, alignItems: "center" }}>
-        {selectedTab === 0 ? (
-          <Saldo />
-        ) : selectedTab === 1 ? (
-          <AllCuentas />
-        ) : (
-          <LastOperation />
-        )}
-      </View>
-    </SafeAreaView>
-  );
+	return (
+		<SafeAreaView className="flex-1 bg-white">
+			<TabsButtons buttons={buttons} selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+			<View style={{ flex: 1, marginTop: 5, alignItems: "center" }}>
+				{selectedTab === 0 ? <Saldo /> : selectedTab === 1 ? <AllCuentas /> : <LastOperation />}
+			</View>
+		</SafeAreaView>
+	);
 };
 
 export default Consultas;

@@ -4,21 +4,17 @@ import TabsButtons from "../../TabsButtons";
 import Autenticacion from "./Autenticacion/Autenticacion";
 
 const Transfermovil = () => {
-  const [selectedTab, setSelectedTab] = useState(0);
-  const buttons = [{ title: "Autenticación" }];
+	const [selectedTab, setSelectedTab] = useState(0);
+	const buttons = [{ title: "Autenticación" }];
 
-  return (
-    <SafeAreaView className="flex-1 bg-white">
-      <TabsButtons
-        buttons={buttons}
-        selectedTab={selectedTab}
-        setSelectedTab={setSelectedTab}
-      />
-      <View style={{ flex: 1, marginTop: 5, alignItems: "center" }}>
-        {selectedTab === 0 ? <Autenticacion /> : null}
-      </View>
-    </SafeAreaView>
-  );
+	return (
+		<SafeAreaView className="flex-1 bg-white">
+			<TabsButtons buttons={buttons} selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+			<View style={{ flex: 1, marginTop: 5, alignItems: "center" }}>
+				{selectedTab === 0 ? <Autenticacion /> : null}
+			</View>
+		</SafeAreaView>
+	);
 };
 
 export default Transfermovil;

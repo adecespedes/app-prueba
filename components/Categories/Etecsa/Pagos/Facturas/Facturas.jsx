@@ -4,21 +4,15 @@ import TabsButtons from "../../../../TabsButtons";
 import Phone from "./Phone";
 
 const Facturas = () => {
-  const [selectedTab, setSelectedTab] = useState(0);
-  const buttons = [{ title: "Factura telefónica" }];
+	const [selectedTab, setSelectedTab] = useState(0);
+	const buttons = [{ title: "Factura telefónica" }];
 
-  return (
-    <SafeAreaView className="flex-1 bg-white">
-      <TabsButtons
-        buttons={buttons}
-        selectedTab={selectedTab}
-        setSelectedTab={setSelectedTab}
-      />
-      <View style={{ flex: 1, marginTop: 5, alignItems: "center" }}>
-        {selectedTab === 0 ? <Phone /> : null}
-      </View>
-    </SafeAreaView>
-  );
+	return (
+		<SafeAreaView className="flex-1 bg-white">
+			<TabsButtons buttons={buttons} selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+			<View style={{ flex: 1, marginTop: 5, alignItems: "center" }}>{selectedTab === 0 ? <Phone /> : null}</View>
+		</SafeAreaView>
+	);
 };
 
 export default Facturas;
